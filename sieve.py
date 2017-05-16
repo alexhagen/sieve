@@ -49,3 +49,62 @@ class sieve(object):
         """ some docstring here """
         for sect in self.sections.items():
             print sect
+
+class line_item(object):
+    """ some docstring here """
+    def __init__(self):
+        pass
+
+    def important(self):
+        self.important = True
+
+    def description(self, description):
+        self.description = description
+
+    def start_date(self, start_date):
+        self.start_date = start_date
+
+    def end_date(self, end_date):
+        self.end_date = end_date
+
+class specification(line_item):
+    """ """
+    def __init__(self):
+        super(specification, self).__init__()
+
+class degree(specification):
+    """ """
+    def __init__(self, _degree, field):
+        super(degree, self).__init__()
+        self.degree = _degree
+        self.field = field
+
+class phd(degree):
+    """ """
+    def __init__(self, field):
+        super(phd, self).__init__('Ph.D.', field)
+
+class ms(degree):
+    """ """
+    def __init__(self, field):
+        super(ms, self).__init__('M.S.', field)
+
+class bs(degree):
+    """ """
+    def __init__(self, field):
+        super(bs, self).__init__('B.S.', field)
+
+class experience(line_item):
+    """ """
+    def __init__(self):
+        super(experience, self).__init__()
+
+class job(experience):
+    """ """
+    def __init__(self):
+        super(job, self).__init__()
+
+class project(experience):
+    """ """
+    def __init__(self):
+        super(project, self).__init__()
